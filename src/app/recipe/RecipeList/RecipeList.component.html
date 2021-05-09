@@ -1,0 +1,23 @@
+<div class="row">
+<div class="col-xs-12">
+     <button (click)="onNewRecipe()" class="btn btn-lg btn-success">New Recipe</button>
+</div>
+
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-xs-12">
+        
+        <app-recipe-item
+         *ngFor="let listElement of recipes;let i=index" 
+        [list]="listElement"
+        (recipeSelected)="onRecipeSelected(listElement)"
+        [index]="i"
+        >
+    
+  <!-- Passing values of list through list property of recipe-item component -->
+
+        </app-recipe-item>
+    </div>
+</div>
